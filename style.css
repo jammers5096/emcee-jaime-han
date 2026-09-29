@@ -188,6 +188,38 @@
   }
   .link-chip:hover{border-color:var(--gold); color:var(--gold);}
 
+
+ /* ---------- EVENT TYPES GRID ---------- */
+  .event-types-grid{
+    display:grid; grid-template-columns:1fr; gap:20px;
+  }
+  @media(min-width:720px){.event-types-grid{grid-template-columns:1fr 1fr;}}
+  .event-type-card{
+    position:relative; border-radius:22px; overflow:hidden;
+    aspect-ratio:4/3; border:1px solid var(--panel-line);
+  }
+  .event-type-card img{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; transition:transform .5s ease;
+  }
+  .event-type-card:hover img{transform:scale(1.06);}
+  .event-type-card::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(10,8,6,0.92) 0%, rgba(10,8,6,0.55) 38%, rgba(10,8,6,0.05) 70%);
+  }
+  .event-type-overlay{
+    position:absolute; left:0; right:0; bottom:0; z-index:2;
+    padding:26px 26px 24px;
+  }
+  .event-type-overlay h3{
+    font-size:22px; color:var(--cream); margin-bottom:8px;
+  }
+  .event-type-overlay p{
+    font-size:14px; line-height:1.55; color:var(--cream-dim);
+    max-width:380px; margin:0;
+  }
+
+
   /* ---------- CLIENTS GRID ---------- */
   .clients-grid{
     display:grid; grid-template-columns:repeat(2,1fr); gap:16px;
